@@ -96,8 +96,7 @@ function saveScore() {
   var initials = scoreListEl.value.trim();
 
   if (initials !== "") {
-    var highscores =
-      JSON.parse(window.localStorage.getItem("highscores"));
+    var highscores = JSON.parse(window.localStorage.getItem("highscores"));
 
     var newScore = {
       score: time,
@@ -106,12 +105,11 @@ function saveScore() {
 
     highscores.push(newScore);
     window.localStorage.setItem("highscores", JSON.stringify(highscores));
-
     window.location.href = "highscores.html";
   }
 }
 
-function checkForEnter(event) {
+function pressEnter(event) {
   if (event.key === "Enter") {
     saveScore();
   }
@@ -121,5 +119,5 @@ submitBtn.onclick = saveScore;
 
 startBtn.onclick = startQuiz;
 
-scoreListEl.onkeyup = checkForEnter;
+scoreListEl.onkeyup = pressEnter;
 
