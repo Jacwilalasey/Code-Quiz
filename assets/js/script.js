@@ -7,7 +7,7 @@ var scoreListEl = document.querySelector("#initials");
 var feedbackEl = document.querySelector("#feedback");
 
 var currentQuestionIndex = 0;
-var time = questions.length * 15;
+var time = questions.length * 20;
 var timerId;
 
 function startQuiz() {
@@ -96,12 +96,15 @@ function saveScore() {
   var initials = scoreListEl.value.trim();
 
   if (initials !== "") {
-    var highscores = JSON.parse(window.localStorage.getItem("highscores"));
+    var highscores = JSON.parse(window.localStorage.getItem("highscores"));;
+    console.log(initials);
 
     var newScore = {
       score: time,
       initials: initials
     };
+
+    console.log(newScore);
 
     highscores.push(newScore);
     window.localStorage.setItem("highscores", JSON.stringify(highscores));
@@ -109,8 +112,8 @@ function saveScore() {
   }
 }
 
-function pressEnter(event) {
-  if (event.key === "Enter") {
+function pressEnter(e) {
+  if (e.key === "Enter") {
     saveScore();
   }
 }

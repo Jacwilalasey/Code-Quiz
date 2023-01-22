@@ -9,8 +9,8 @@ function listScore() {
       var liTag = document.createElement("li");
       liTag.textContent = "🎉" + score.initials + " - " + score.score + "🎉";
   
-      var olEl = document.getElementById("highscores");
-      olEl.appendChild(liTag);
+      var listEl = document.getElementById("highscores");
+      listEl.appendChild(liTag);
     });
   }
   
