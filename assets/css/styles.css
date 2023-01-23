@@ -60,7 +60,8 @@ li {
 }
 
 li:nth-child(odd) {
-  background-color: #f3edfc;
+  background-color: #3f7d20;
+  border-radius: 5px;
 }
 
 .wrapper {
