@@ -96,7 +96,7 @@ function saveScore() {
   var initials = scoreListEl.value.trim();
 
   if (initials !== "") {
-    var highscores = JSON.parse(window.localStorage.getItem("highscores"));;
+    var highscores = [];
     console.log(initials);
 
     var newScore = {
